@@ -91,8 +91,8 @@
     align-items: center;
     justify-content: center;
     color: var(--text-secondary);
-    background: white;
-    border: 1px solid rgba(0, 0, 0, 0.08);
+    background: var(--bg-alt);
+    border: 1px solid var(--border-color);
     transition: all var(--transition-base);
     box-shadow: var(--shadow-sm);
 }
@@ -100,7 +100,7 @@
 .social-icon:hover {
     background: var(--primary-color);
     border-color: var(--primary-color);
-    color: white;
+    color: var(--bg-color);
     transform: translateY(-4px);
     box-shadow: 0 6px 16px rgba(var(--primary-color-rgb), 0.25);
 }

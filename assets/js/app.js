@@ -1,5 +1,23 @@
 // Navigation scroll behavior
 document.addEventListener('DOMContentLoaded', () => {
+    // Theme Toggle Functionality
+    const themeToggle = document.querySelector('.theme-toggle');
+    const htmlElement = document.documentElement;
+    
+    // Check for saved theme preference or default to 'light'
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    htmlElement.setAttribute('data-theme', currentTheme);
+    
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = htmlElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            htmlElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
+    }
+
     // Mobile Navigation Toggle
     const navToggle = document.querySelector('.nav-toggle');
     const navList = document.querySelector('.nav-list');

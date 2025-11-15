@@ -66,6 +66,26 @@
     --transition-slow: 500ms ease-in-out;
 }
 
+/* Dark mode colors */
+[data-theme="dark"] {
+    --primary-color: #E8EAED;
+    --primary-color-rgb: 232, 234, 237;
+    --secondary-color: #4A9EFF;
+    --bg-color: #1A1D23;
+    --bg-alt: #23272F;
+    --text-color: #E8EAED;
+    --text-secondary: #9AA0A6;
+    --text-light: #9AA0A6;
+    --border-color: #3C4048;
+    --success-color: #2ECC71;
+    --warning-color: #F39C12;
+    --error-color: #E74C3C;
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.6);
+}
+
 /* Reset */
 *, *::before, *::after {
     margin: 0;
@@ -87,6 +107,7 @@ body {
     font-weight: var(--font-weight-regular);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    transition: background-color var(--transition-base), color var(--transition-base);
 }
 
 /* Typography */
@@ -184,8 +205,77 @@ a:hover {
         --spacing-2xl: 3rem;   /* 48px */
         --spacing-3xl: 4rem;   /* 64px */
     }
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 56px;
+    height: 56px;
+    border-radius: var(--radius-full);
+    background: var(--secondary-color);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-xl);
+    z-index: 1000;
+    transition: all var(--transition-base);
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 25px 30px -5px rgba(0, 0, 0, 0.2);
+}
+
+.theme-toggle:active {
+    transform: scale(0.95);
+}
+
+.theme-toggle svg {
+    width: 24px;
+    height: 24px;
+    color: white;
+    transition: transform var(--transition-base);
+}
+
+.theme-toggle:hover svg {
+    transform: rotate(20deg);
+}
+
+/* Hide sun icon in light mode, moon icon in dark mode */
+[data-theme="light"] .theme-toggle .moon-icon {
+    display: block;
+}
+
+[data-theme="light"] .theme-toggle .sun-icon {
+    display: none;
+}
+
+[data-theme="dark"] .theme-toggle .moon-icon {
+    display: none;
+}
+
+[data-theme="dark"] .theme-toggle .sun-icon {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .theme-toggle {
+        bottom: 1.5rem;
+        right: 1.5rem;
+        width: 48px;
+        height: 48px;
+    }
     
-    html {
+    .theme-toggle svg {
+        width: 20px;
+        height: 20px;
+    }
+}    html {
         font-size: 14px;
     }
     

@@ -11,10 +11,7 @@
     font-weight: var(--font-weight-bold);
     margin-bottom: var(--spacing-sm);
     line-height: var(--line-height-tight);
-    background: linear-gradient(135deg, #333, #666);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--text-color);
 }
 
 .hero-subtitle {
@@ -75,7 +72,7 @@
 
 /* Highlight cards */
 .highlight-card {
-    background: white;
+    background: var(--bg-alt);
     padding: var(--spacing-lg);
     border-radius: var(--radius-xl);
     text-align: center;
@@ -122,7 +119,7 @@
 }
 
 .skill-pill {
-    background: white;
+    background: var(--bg-alt);
     padding: 0.75rem 1.5rem;
     border-radius: var(--radius-full);
     font-size: var(--font-sm);
@@ -136,7 +133,7 @@
 
 .skill-pill:hover {
     background: var(--primary-color);
-    color: white;
+    color: var(--bg-color);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(var(--primary-color-rgb), 0.2);
 }

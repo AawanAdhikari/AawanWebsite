@@ -67,11 +67,11 @@
 
 /* Card styles */
 .card {
-    background-color: var(--bg-color);
+    background-color: var(--bg-alt);
     border-radius: var(--radius-lg);
     padding: var(--spacing-md);
     box-shadow: var(--shadow-sm);
-    transition: transform var(--transition-base);
+    transition: transform var(--transition-base), background-color var(--transition-base);
 }
 
 .card:hover {
