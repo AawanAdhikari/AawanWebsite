@@ -1,0 +1,223 @@
+/* Certifications Section Styles */
+#certifications {
+    padding: var(--spacing-xl) 0;
+}
+
+.cert-images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Fixed 3 columns */
+    gap: 2rem;
+    margin-top: 2rem;
+    max-width: 100%;
+}
+
+.cert-item {
+    max-width: 100%;
+    width: 100%;
+}
+
+.cert-item {
+    margin: 0;
+    background: var(--bg-color);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.cert-item:hover {
+    transform: translateY(-5px);
+}
+
+.cert-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 220px; /* Fixed height instead of aspect ratio */
+    overflow: hidden;
+}
+
+.cert-image-wrapper a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.cert-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.cert-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.cert-overlay i {
+    color: white;
+    font-size: 1.5rem;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+}
+
+.cert-image-wrapper:hover .cert-overlay {
+    opacity: 1;
+}
+
+.cert-image-wrapper:hover .cert-overlay i {
+    transform: translateY(0);
+}
+
+.cert-image-wrapper:hover .cert-image {
+    transform: scale(1.1);
+}
+
+.cert-item figcaption {
+    padding: 1.2rem;
+    text-align: center;
+}
+
+.cert-item h4 {
+    color: var(--text-color);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+.cert-issuer {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+    .cert-item {
+        background: var(--bg-color);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+    
+    .cert-overlay {
+        background: rgba(0, 0, 0, 0.6);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .cert-images {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .cert-images {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .cert-item figcaption {
+        padding: 1rem;
+    }
+    
+    .cert-item h4 {
+        font-size: 1rem;
+    }
+}
+
+.certification-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.cert-image-container {
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.cert-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.certification-card:hover .cert-image {
+    transform: scale(1.05);
+}
+
+.cert-content {
+    padding: var(--spacing-sm);
+}
+
+.cert-content h3 {
+    color: var(--text-color);
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-xs);
+    font-weight: 600;
+}
+
+.certification-issuer {
+    color: var(--secondary-color);
+    font-weight: 500;
+    margin-bottom: var(--spacing-xs);
+}
+
+.certification-date {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.certification-description {
+    color: var(--text-color);
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-bottom: var(--spacing-xs);
+    /* Limit to 2 lines with ellipsis */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.cert-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: calc(var(--spacing-xs) / 2) var(--spacing-sm);
+    background: rgba(9, 132, 227, 0.1);
+    color: var(--secondary-color);
+    border-radius: var(--radius-full);
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-top: var(--spacing-xs);
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+    .certification-card {
+        background: var(--bg-color);
+    }
+    
+    .cert-badge {
+        background: rgba(9, 132, 227, 0.2);
+    }
+}
